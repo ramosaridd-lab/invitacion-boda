@@ -1,0 +1,55 @@
+INVITACIÓN DE BODA — ARCHIVOS A COLOCAR EN /assets
+
+ARCHIVOS PRINCIPALES
+1. foto-novios.jpg
+   Fotografía vertical de los novios. Recomendado: 1200 x 1500 px aprox.
+
+2. musica.mp3
+   Canción de fondo. Se reproduce después de tocar "Abrir invitación".
+
+3. portada-whatsapp.jpg
+   Imagen para la vista previa al compartir el enlace.
+   Recomendado: 1200 x 630 px.
+
+FLORES / DECORACIÓN
+4. flores-esquina-1.png
+5. flores-esquina-2.png
+   PNG con fondo transparente. Puedes usar composiciones florales elegantes
+   en verde oliva, blanco y tonos suaves.
+
+ICONOS
+6. icono-ubicacion.png
+7. icono-vestimenta.png
+8. icono-itinerario.png
+9. icono-whatsapp.png
+
+11. flor-sutil-1.png
+12. flor-sutil-2.png
+    PNG decorativos suaves para algunas secciones. Son opcionales.
+
+OPCIONAL
+10. textura-papel.png
+    Textura muy suave y clara para el fondo.
+
+DÓNDE CAMBIAR LOS DATOS
+Abre index.html y busca:
+    const CONFIG = {
+
+Ahí podrás cambiar:
+- nombres de los novios
+- fecha y hora
+- nombre y dirección del local
+- Google Maps
+- WhatsApp
+- mensajes
+- itinerario
+- nombre de archivos de foto y música
+
+IMPORTANTE PARA WHATSAPP
+Cuando publiques en GitHub Pages, cambia en el <head>:
+- og:image por la URL pública completa de portada-whatsapp.jpg
+- og:url por la URL pública de la invitación
+
+Ejemplo:
+<meta property="og:image" content="https://usuario.github.io/boda/assets/portada-whatsapp.jpg">
+<meta property="og:url" content="https://usuario.github.io/boda/">

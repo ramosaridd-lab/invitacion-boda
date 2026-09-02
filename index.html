@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="theme-color" content="#f9f8f3">
+
+  <!-- =========================================================
+
+       VISTA PREVIA AL COMPARTIR POR WHATSAPP
+
+       IMPORTANTE:
+
+       Cuando publiques en GitHub Pages, cambia content de og:url
+
+       y og:image por las URL públicas reales.
+
+       ========================================================= -->
+
+  <title>Nuestra Boda</title>
+
+  <meta name="description" content="Acompáñanos a celebrar nuestro matrimonio.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="Nuestra Boda">
+
+  <meta property="og:description" content="Nos encantaría compartir contigo este día tan especial.">
+
+  <meta property="og:image" content="assets/portada-whatsapp.jpg">
+
+  <meta property="og:url" content="">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+
+      --olive:#6f774f;
+
+      --olive-deep:#4f5837;
+
+      --olive-soft:#a9ae90;
+
+      --olive-pale:#e9eadf;
+
+      --white:#fffefb;
+
+      --paper:#fbfaf6;
+
+      --ink:#5e5a50;
+
+      --ink-soft:#858073;
+
+      --line:#d7d8c9;
+
+      --shadow:0 16px 38px rgba(58,65,40,.10);
+
+      --max:480px;
+
+      --radius:26px;
+
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+
+      margin:0;
+
+      min-height:100vh;
+
+      color:var(--ink);
+
+      font-family:"Playfair Display", Georgia, serif;
+
+      background:
+
+        radial-gradient(circle at 10% 0%, rgba(111,119,79,.09), transparent 28%),
+
+        radial-gradient(circle at 90% 16%, rgba(169,174,144,.12), transparent 28%),
+
+        #efeee8;
+
+      overflow-x:hidden;
+
+    }
+
+    body.invitation-open{overflow:auto}
+
+    body:not(.invitation-open){overflow:hidden}
+
+    button,a{font:inherit}
+
+    img{display:block;max-width:100%}
+
+    /* =========================================================
+
+       PAGINA
+
+       ========================================================= */
+
+    .page{
+
+      position:relative;
+
+      width:min(100%, var(--max));
+
+      min-height:100vh;
+
+      margin:0 auto;
+
+      overflow:hidden;
+
+      background:
+
+        linear-gradient(rgba(255,254,251,.95), rgba(255,254,251,.95)),
+
+        url("assets/textura-papel.png");
+
+      background-size:auto, 500px;
+
+      box-shadow:0 0 0 1px rgba(79,88,55,.05);
+
+    }
+
+    .section{
+
+      position:relative;
+
+      z-index:2;
+
+      min-height:440px;
+
+      padding:82px 42px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:center;
+
+      text-align:center;
+
+    }
+
+    .section.compact{
+
+      min-height:0;
+
+      padding-top:66px;
+
+      padding-bottom:66px;
+
+    }
+
+    .section.soft{
+
+      background:linear-gradient(180deg, rgba(233,234,223,.38), rgba(255,254,251,.12));
+
+    }
+
+    .kicker{
+
+      margin:0 0 12px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.70rem;
+
+      font-weight:500;
+
+      letter-spacing:.26em;
+
+      text-transform:uppercase;
+
+      color:var(--olive);
+
+    }
+
+    .script{
+
+      margin:0;
+
+      font-family:"Great Vibes", cursive;
+
+      font-weight:400;
+
+      line-height:.95;
+
+      color:var(--olive-deep);
+
+    }
+
+    .hero-names{
+
+      font-size:4.25rem;
+
+      line-height:.94;
+
+      margin:10px 0 16px;
+
+    }
+
+    .section-title{
+
+      font-size:3.4rem;
+
+      margin-bottom:14px;
+
+    }
+
+    .serif-heading{
+
+      margin:0;
+
+      font-size:1.28rem;
+
+      line-height:1.25;
+
+      font-weight:500;
+
+      letter-spacing:.06em;
+
+      color:var(--olive-deep);
+
+    }
+
+    .copy{
+
+      max-width:352px;
+
+      margin:0 auto;
+
+      font-family:"Playfair Display", Georgia, serif;
+
+      font-size:1.18rem;
+
+      line-height:1.78;
+
+      font-weight:400;
+
+      letter-spacing:.01em;
+
+      color:#6a655d;
+
+    }
+
+    .copy.strong{
+
+      color:var(--ink);
+
+      font-size:1.22rem;
+
+      font-style:italic;
+
+    }
+
+    .divider{
+
+      position:relative;
+
+      width:118px;
+
+      height:24px;
+
+      margin:20px auto 22px;
+
+    }
+
+    .divider::before,
+
+    .divider::after{
+
+      content:"";
+
+      position:absolute;
+
+      top:12px;
+
+      width:41px;
+
+      height:1px;
+
+      background:var(--line);
+
+    }
+
+    .divider::before{left:0}
+
+    .divider::after{right:0}
+
+    .divider .leaf-mark{
+
+      position:absolute;
+
+      left:50%;
+
+      top:50%;
+
+      width:12px;
+
+      height:18px;
+
+      border:1px solid var(--olive);
+
+      border-radius:100% 0 100% 0;
+
+      transform:translate(-50%,-50%) rotate(-38deg);
+
+      opacity:.84;
+
+    }
+
+    /* =========================================================
+
+       DECORACIÓN FLORAL
+
+       Las imágenes PNG son OPCIONALES.
+
+       Si no existen, el diseño conserva las hojas SVG/CSS.
+
+       ========================================================= */
+
+    .floral-img{
+
+      position:absolute;
+
+      z-index:1;
+
+      pointer-events:none;
+
+      user-select:none;
+
+      opacity:.97;
+
+      max-width:none;
+
+    }
+
+    .floral-img.top-left{
+
+      top:-12px;left:-20px;
+
+      width:190px;
+
+      transform:rotate(-5deg);
+
+    }
+
+    .floral-img.top-right{
+
+      top:-8px;right:-26px;
+
+      width:180px;
+
+      transform:scaleX(-1) rotate(-4deg);
+
+    }
+
+    .floral-img.bottom-left{
+
+      bottom:-16px;left:-28px;
+
+      width:185px;
+
+      transform:scaleY(-1) rotate(5deg);
+
+    }
+
+    .floral-img.bottom-right{
+
+      bottom:-18px;right:-25px;
+
+      width:185px;
+
+      transform:scale(-1) rotate(2deg);
+
+    }
+
+    .section::before,
+
+    .section::after{
+
+      content:"";
+
+      position:absolute;
+
+      width:150px;
+
+      height:150px;
+
+      pointer-events:none;
+
+      opacity:.16;
+
+      z-index:0;
+
+      background-repeat:no-repeat;
+
+      background-size:contain;
+
+    }
+
+    .section::before{
+
+      top:20px;
+
+      left:10px;
+
+      background-image:url("assets/flor-sutil-1.png");
+
+    }
+
+    .section::after{
+
+      right:8px;
+
+      bottom:20px;
+
+      transform:scaleX(-1);
+
+      background-image:url("assets/flor-sutil-2.png");
+
+    }
+
+    .hero::before{opacity:.22;width:180px;height:180px;top:36px;left:-6px;}
+
+    .hero::after{opacity:.22;width:180px;height:180px;bottom:28px;right:-6px;}
+
+    .soft::before, .soft::after{opacity:.18;}
+
+    .botanical{
+
+      position:absolute;
+
+      z-index:0;
+
+      width:170px;
+
+      height:270px;
+
+      pointer-events:none;
+
+      opacity:.40;
+
+    }
+
+    .botanical.left{left:-78px;top:16%}
+
+    .botanical.right{right:-82px;top:54%;transform:scaleX(-1)}
+
+    .stem{
+
+      fill:none;
+
+      stroke:var(--olive-soft);
+
+      stroke-width:1.3;
+
+      stroke-linecap:round;
+
+    }
+
+    .leaf{
+
+      fill:rgba(111,119,79,.08);
+
+      stroke:var(--olive-soft);
+
+      stroke-width:1.2;
+
+    }
+
+    .flower-line{
+
+      fill:none;
+
+      stroke:rgba(111,119,79,.55);
+
+      stroke-width:1;
+
+    }
+
+    /* =========================================================
+
+       APERTURA
+
+       ========================================================= */
+
+    .gate{
+
+      position:fixed;
+
+      inset:0;
+
+      z-index:1000;
+
+      display:grid;
+
+      place-items:center;
+
+      padding:24px;
+
+      background:
+
+        radial-gradient(circle at 20% 12%, rgba(111,119,79,.13), transparent 26%),
+
+        radial-gradient(circle at 82% 84%, rgba(169,174,144,.18), transparent 26%),
+
+        var(--paper);
+
+      transition:opacity .85s ease, visibility .85s ease;
+
+      overflow:hidden;
+
+    }
+
+    .gate.hide{
+
+      opacity:0;
+
+      visibility:hidden;
+
+      pointer-events:none;
+
+    }
+
+    .gate::before,
+
+    .gate::after{
+
+      content:"";
+
+      position:absolute;
+
+      width:250px;
+
+      height:340px;
+
+      border:1px solid rgba(111,119,79,.15);
+
+      border-radius:50%;
+
+      transform:rotate(35deg);
+
+    }
+
+    .gate::before{left:-145px;top:-135px}
+
+    .gate::after{right:-155px;bottom:-145px}
+
+    .gate-card{
+
+      position:relative;
+
+      width:min(100%, 390px);
+
+      padding:48px 30px 42px;
+
+      text-align:center;
+
+      border:1px solid rgba(111,119,79,.19);
+
+      background:rgba(255,254,251,.91);
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .gate-card::before,
+
+    .gate-card::after{
+
+      content:"";
+
+      position:absolute;
+
+      inset:11px;
+
+      border:1px solid rgba(111,119,79,.12);
+
+      pointer-events:none;
+
+    }
+
+    .gate-card::after{
+
+      inset:17px;
+
+      border-color:rgba(111,119,79,.06);
+
+    }
+
+    .gate-vine{
+
+      position:absolute;
+
+      width:130px;
+
+      opacity:.88;
+
+      pointer-events:none;
+
+    }
+
+    .gate-vine.left{left:-12px;top:-8px;}
+
+    .gate-vine.right{right:-12px;bottom:-10px;transform:scaleX(-1);}
+
+    .gate-logo{
+
+      display:block;
+
+      width:230px;
+
+      max-width:82%;
+
+      height:auto;
+
+      margin:0 auto 22px;
+
+      object-fit:contain;
+
+      position:relative;
+
+      z-index:2;
+
+    }
+
+    .gate-label{
+
+      margin-bottom:10px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.67rem;
+
+      letter-spacing:.31em;
+
+      text-transform:uppercase;
+
+      color:var(--olive);
+
+    }
+
+    .gate-title{
+
+      font-family:"Great Vibes",cursive;
+
+      font-size:3.5rem;
+
+      line-height:.95;
+
+      color:var(--olive-deep);
+
+      margin:0 0 12px;
+
+    }
+
+    .gate-copy{
+
+      margin:0 auto 27px;
+
+      max-width:290px;
+
+      color:#746f66;
+
+      font-size:1.12rem;
+
+      line-height:1.65;
+
+    }
+
+    .btn{
+
+      display:inline-flex;
+
+      min-height:48px;
+
+      align-items:center;
+
+      justify-content:center;
+
+      gap:8px;
+
+      padding:12px 24px;
+
+      border:1px solid var(--olive);
+
+      border-radius:999px;
+
+      background:var(--olive);
+
+      color:#fff;
+
+      text-decoration:none;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.72rem;
+
+      font-weight:500;
+
+      letter-spacing:.15em;
+
+      text-transform:uppercase;
+
+      cursor:pointer;
+
+      box-shadow:0 9px 22px rgba(79,88,55,.14);
+
+      transition:transform .22s ease, background .22s ease, color .22s ease;
+
+    }
+
+    .btn:hover{transform:translateY(-2px);background:var(--olive-deep)}
+
+    .btn:active{transform:translateY(0)}
+
+    .btn.outline{background:transparent;color:var(--olive-deep)}
+
+    .btn.disabled{opacity:.45;pointer-events:none}
+
+    .tap-note{
+
+      margin-top:15px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.63rem;
+
+      letter-spacing:.12em;
+
+      color:var(--ink-soft);
+
+    }
+
+    /* =========================================================
+
+       PORTADA / FOTO
+
+       ========================================================= */
+
+    .hero{
+
+      min-height:100svh;
+
+      padding-top:110px;
+
+      padding-bottom:110px;
+
+    }
+
+    .hero-date-small{
+
+      margin-top:7px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.72rem;
+
+      letter-spacing:.23em;
+
+      text-transform:uppercase;
+
+      color:var(--olive);
+
+    }
+
+    .photo-frame{
+
+      position:relative;
+
+      width:260px;
+
+      aspect-ratio:4 / 5;
+
+      margin:26px auto 24px;
+
+      border-radius:136px 136px 20px 20px;
+
+      overflow:hidden;
+
+      background:
+
+        linear-gradient(145deg, rgba(111,119,79,.18), rgba(233,234,223,.55)),
+
+        var(--olive-pale);
+
+      box-shadow:var(--shadow);
+
+      border:1px solid rgba(111,119,79,.18);
+
+      display:grid;
+
+      place-items:center;
+
+    }
+
+    .photo-frame::after{
+
+      content:"";
+
+      position:absolute;
+
+      inset:10px;
+
+      border:1px solid rgba(255,255,255,.78);
+
+      border-radius:126px 126px 14px 14px;
+
+      pointer-events:none;
+
+    }
+
+    .photo-frame img{
+
+      width:100%;
+
+      height:100%;
+
+      object-fit:cover;
+
+    }
+
+    .photo-fallback{
+
+      padding:30px;
+
+      color:var(--olive);
+
+      font-family:"Cinzel", serif;
+
+      font-size:.7rem;
+
+      line-height:1.55;
+
+      letter-spacing:.08em;
+
+      text-transform:uppercase;
+
+    }
+
+    /* =========================================================
+
+       FECHA
+
+       ========================================================= */
+
+    .date-box{
+
+      width:min(100%, 355px);
+
+      margin:27px auto 0;
+
+      display:grid;
+
+      grid-template-columns:1fr 110px 1fr;
+
+      align-items:center;
+
+      gap:13px;
+
+    }
+
+    .date-side{
+
+      padding:13px 4px;
+
+      border-top:1px solid var(--line);
+
+      border-bottom:1px solid var(--line);
+
+      font-size:1.08rem;
+
+      color:var(--ink);
+
+    }
+
+    .date-number{
+
+      font-size:4.8rem;
+
+      line-height:.86;
+
+      font-weight:500;
+
+      color:var(--olive-deep);
+
+    }
+
+    .month{
+
+      margin-bottom:12px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.77rem;
+
+      letter-spacing:.30em;
+
+      text-transform:uppercase;
+
+      color:var(--olive);
+
+    }
+
+    .year{
+
+      margin-top:21px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.7rem;
+
+      letter-spacing:.32em;
+
+      color:var(--ink-soft);
+
+    }
+
+    /* =========================================================
+
+       CUENTA REGRESIVA
+
+       ========================================================= */
+
+    .countdown{
+
+      display:grid;
+
+      grid-template-columns:repeat(4,1fr);
+
+      gap:7px;
+
+      width:min(100%, 380px);
+
+      margin:30px auto 0;
+
+    }
+
+    .count{
+
+      min-width:0;
+
+      padding:18px 3px 15px;
+
+      border-top:1px solid var(--line);
+
+      border-bottom:1px solid var(--line);
+
+    }
+
+    .count strong{
+
+      display:block;
+
+      font-size:1.72rem;
+
+      line-height:1;
+
+      font-weight:500;
+
+      color:var(--olive-deep);
+
+    }
+
+    .count span{
+
+      display:block;
+
+      margin-top:8px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.54rem;
+
+      letter-spacing:.09em;
+
+      text-transform:uppercase;
+
+      color:var(--ink-soft);
+
+    }
+
+    /* =========================================================
+
+       UBICACIÓN
+
+       ========================================================= */
+
+    .icon-slot{
+
+      width:58px;
+
+      height:58px;
+
+      margin:0 auto 17px;
+
+      display:grid;
+
+      place-items:center;
+
+      border-radius:50%;
+
+      border:1px solid rgba(111,119,79,.26);
+
+      color:var(--olive-deep);
+
+    }
+
+    .icon-slot img{
+
+      width:30px;
+
+      height:30px;
+
+      object-fit:contain;
+
+    }
+
+    .icon-fallback{
+
+      width:24px;
+
+      height:24px;
+
+      stroke:currentColor;
+
+      fill:none;
+
+      stroke-width:1.35;
+
+      stroke-linecap:round;
+
+      stroke-linejoin:round;
+
+    }
+
+    .place-card{
+
+      width:min(100%, 354px);
+
+      margin:28px auto 0;
+
+      padding:30px 25px;
+
+      border:1px solid rgba(111,119,79,.18);
+
+      background:rgba(255,255,255,.72);
+
+      box-shadow:0 12px 28px rgba(79,88,55,.05);
+
+    }
+
+    .venue{
+
+      margin:0 0 8px;
+
+      font-size:1.45rem;
+
+      font-weight:600;
+
+      color:var(--olive-deep);
+
+    }
+
+    .address{
+
+      margin:0 auto 21px;
+
+      max-width:290px;
+
+      font-family:"Playfair Display", Georgia, serif;
+
+      font-size:1.04rem;
+
+      line-height:1.65;
+
+      color:var(--ink-soft);
+
+    }
+
+    /* =========================================================
+
+       DRESS CODE
+
+       ========================================================= */
+
+    .dress-title{
+
+      margin:4px 0 8px;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.83rem;
+
+      font-weight:600;
+
+      letter-spacing:.22em;
+
+      text-transform:uppercase;
+
+      color:var(--olive-deep);
+
+    }
+
+    .swatches{
+
+      display:flex;
+
+      justify-content:center;
+
+      gap:16px;
+
+      flex-wrap:wrap;
+
+      margin:26px auto 16px;
+
+    }
+
+    .swatch-wrap{width:50px}
+
+    .swatch{
+
+      width:38px;
+
+      height:38px;
+
+      margin:0 auto 8px;
+
+      border-radius:50%;
+
+      border:1px solid rgba(62,62,54,.15);
+
+      box-shadow:inset 0 0 0 3px rgba(255,255,255,.42);
+
+    }
+
+    .swatch-label{
+
+      font-family:"Cinzel", serif;
+
+      font-size:.55rem;
+
+      letter-spacing:.05em;
+
+      color:var(--ink-soft);
+
+    }
+
+    .white{background:#fff}
+
+    .pearl{background:#eee9df}
+
+    .beige{background:#d9c4a3}
+
+    .red{background:#FF2D05}
+
+    /* =========================================================
+
+       ITINERARIO
+
+       ========================================================= */
+
+    .timeline{
+
+      position:relative;
+
+      width:min(100%, 350px);
+
+      margin:30px auto 0;
+
+      text-align:left;
+
+    }
+
+    .timeline::before{
+
+      content:"";
+
+      position:absolute;
+
+      left:76px;
+
+      top:6px;
+
+      bottom:6px;
+
+      width:1px;
+
+      background:var(--line);
+
+    }
+
+    .timeline-item{
+
+      position:relative;
+
+      display:grid;
+
+      grid-template-columns:63px 26px 1fr;
+
+      gap:0 13px;
+
+      align-items:center;
+
+      min-height:73px;
+
+    }
+
+    .time{
+
+      text-align:right;
+
+      font-family:"Cinzel", serif;
+
+      font-size:.62rem;
+
+      letter-spacing:.04em;
+
+      color:var(--olive);
+
+    }
+
+    .timeline-dot{
+
+      position:relative;
+
+      z-index:2;
+
+      width:9px;
+
+      height:9px;
+
+      margin:auto;
+
+      border:2px solid var(--olive);
+
+      border-radius:50%;
+
+      background:var(--white);
+
+    }
+
+    .event-name{
+
+      font-family:"Playfair Display", Georgia, serif;
+
+      font-size:1.15rem;
+
+      color:var(--ink);
+
+    }
+
+    /* =========================================================
+
+       CIERRE
+
+       ========================================================= */
+
+    .thanks{
+
+      min-height:620px;
+
+      padding-bottom:125px;
+
+    }
+
+    .final-names{
+
+      margin-top:22px;
+
+      font-size:3.2rem;
+
+    }
+
+    /* =========================================================
+
+       MÚSICA / REVEAL
+
+       ========================================================= */
+
+    .music-toggle{
+
+      position:fixed;
+
+      z-index:800;
+
+      right:max(16px, env(safe-area-inset-right));
+
+      bottom:max(16px, env(safe-area-inset-bottom));
+
+      width:48px;
+
+      height:48px;
+
+      border:1px solid rgba(111,119,79,.25);
+
+      border-radius:50%;
+
+      display:none;
+
+      place-items:center;
+
+      background:rgba(255,254,251,.93);
+
+      color:var(--olive-deep);
+
+      box-shadow:0 9px 25px rgba(79,88,55,.13);
+
+      backdrop-filter:blur(8px);
+
+      cursor:pointer;
+
+    }
+
+    .music-toggle svg{
+
+      width:21px;
+
+      height:21px;
+
+      fill:none;
+
+      stroke:currentColor;
+
+      stroke-width:1.5;
+
+      stroke-linecap:round;
+
+      stroke-linejoin:round;
+
+    }
+
+    .reveal{
+
+      opacity:0;
+
+      transform:translateY(24px);
+
+      transition:opacity .85s ease, transform .85s cubic-bezier(.22,.65,.31,1);
+
+    }
+
+    .reveal.show{
+
+      opacity:1;
+
+      transform:none;
+
+    }
+
+    .float-leaf{
+
+      position:absolute;
+
+      z-index:1;
+
+      width:10px;
+
+      height:18px;
+
+      border:1px solid rgba(111,119,79,.42);
+
+      border-radius:100% 0 100% 0;
+
+      animation:leafFloat 6s ease-in-out infinite;
+
+      pointer-events:none;
+
+    }
+
+    .l1{top:17%;left:31px;transform:rotate(-30deg)}
+
+    .l2{top:37%;right:30px;animation-delay:1.4s;transform:rotate(45deg)}
+
+    .l3{top:68%;left:28px;animation-delay:2.8s;transform:rotate(-55deg)}
+
+    @keyframes leafFloat{
+
+      0%,100%{translate:0 0}
+
+      50%{translate:4px -11px}
+
+    }
+
+    @media (max-width:390px){
+
+      .section{padding-left:30px;padding-right:30px}
+
+      .hero-names{font-size:3.55rem}
+
+      .section-title{font-size:2.9rem}
+
+      .date-box{grid-template-columns:1fr 90px 1fr}
+
+      .date-number{font-size:4.15rem}
+
+      .count strong{font-size:1.48rem}
+
+      .timeline::before{left:68px}
+
+      .timeline-item{grid-template-columns:57px 23px 1fr;gap:0 10px}
+
+    }
+
+    @media (prefers-reduced-motion:reduce){
+
+      *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+
+      .reveal{opacity:1;transform:none}
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================================================
+
+       EDITA SOLO ESTA PARTE
+
+       ========================================================= -->
+
+  <script>
+
+    const CONFIG = {
+
+      brideName: "Leia",
+
+      groomName: "Frank",
+
+      /* Fecha completa para la cuenta regresiva */
+
+      eventDate: "2026-09-26T17:00:00-05:00",
+
+      /* Texto visual de la fecha */
+
+      dayText: "Sábado",
+
+      dateNumber: "26",
+
+      monthText: "Septiembre",
+
+      yearText: "2026",
+
+      timeText: "18:00 Hrs.",
+
+      /* Ceremonia y recepción serán en el mismo lugar */
+
+      venueName: "Producciones Costa Azul",
+
+      address: "Av. La Playa Mz D - Ventanilla (al costado del colegio Heroes del Pacifico)",
+
+      mapsUrl: "https://maps.app.goo.gl/Xpv6e9uS943DdyyA7?g_st=aw",
+
+      /* WhatsApp: Perú = 51 + número, sin + ni espacios */
+
+      whatsappNumber: "51912498727",
+
+      whatsappMessage: "Hola Leia, deseo confirmar mi asistencia a su boda 💍🎊.",
+
+      /* Archivos dentro de /assets */
+
+      couplePhoto: "assets/foto-novios.jpg",
+
+      musicFile: "assets/musica.m4a",
+
+      /* Mensajes */
+
+      openingMessage: "Hay momentos que se viven una vez, pero se recuerdan para siempre.",
+
+      welcomeMessage: "Con mucha alegría queremos compartir contigo uno de los días más importantes de nuestras vidas.",
+
+      coupleMessage: "Después de tantos momentos compartidos, ha llegado el día de comenzar una nueva historia juntos.",
+
+      mainMessage: "El amor nos llevó hasta aquí y queremos celebrar este nuevo comienzo rodeados de las personas que forman parte de nuestra historia.",
+
+      dateMessage: "Reserva esta fecha para celebrar con nosotros.",
+
+      locationMessage: "Será un honor recibirte y celebrar juntos en este lugar tan especial.",
+
+      dressMessage: "Queremos que cada detalle de este día sea especial. Agradecemos evitar los colores reservados en tu vestimenta.",
+
+      itineraryMessage: "Tenemos preparado un día lleno de momentos para recordar.",
+
+      confirmationMessage: "Tu presencia hará que este día sea aún más especial. Esperamos poder celebrar contigo.",
+
+      thanksMessage: "Gracias por formar parte de nuestra historia y por acompañarnos en el comienzo de esta nueva etapa.",
+
+      /* Itinerario: modifica horas y actividades */
+
+      itinerary: [
+
+        { time: "18:00", name: "Bienvenida" },
+
+        { time: "19:00", name: "Ceremonia" },
+
+        { time: "20:00", name: "Baile de novios" },
+
+        { time: "21:00", name: "Cena" },
+
+        { time: "22:00", name: "Baile" }
+
+      ]
+
+    };
+
+  </script>
+
+  <!-- =========================================================
+
+       PANTALLA INICIAL
+
+       Al hacer clic se abre la invitación y empieza la música.
+
+       ========================================================= -->
+
+  <div class="gate" id="gate" role="dialog" aria-modal="true">
+
+    <img class="floral-img top-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+    <img class="floral-img bottom-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+    <div class="gate-card">
+
+      <img class="gate-vine left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <img class="gate-vine right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <img
+        src="assets/logo-boda.png"
+        alt="Logo de la boda de Leia y Frank"
+        class="gate-logo"
+      >
+
+      <div class="gate-label">Nuestra boda</div>
+
+      <h1 class="gate-title">Una invitación especial</h1>
+
+      <p class="gate-copy" id="openingMessage"></p>
+
+      <button class="btn" id="openInvitation" type="button">Abrir invitación</button>
+
+      <div class="tap-note">Toca para comenzar</div>
+
+    </div>
+
+  </div>
+
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Activar o desactivar música">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+
+      <path d="M9 18V5l10-2v13"></path>
+
+      <circle cx="6" cy="18" r="3"></circle>
+
+      <circle cx="16" cy="16" r="3"></circle>
+
+    </svg>
+
+  </button>
+
+  <audio id="bgMusic" loop preload="none"></audio>
+
+  <main class="page" id="invitation">
+
+    <span class="float-leaf l1" aria-hidden="true"></span>
+
+    <span class="float-leaf l2" aria-hidden="true"></span>
+
+    <span class="float-leaf l3" aria-hidden="true"></span>
+
+    <!-- Decoración botánica vectorial de respaldo -->
+
+    <svg class="botanical left" viewBox="0 0 170 270" aria-hidden="true">
+
+      <path class="stem" d="M145 258 C120 218,112 180,120 138 C128 94,104 57,67 18"/>
+
+      <path class="leaf" d="M116 185 C84 170,75 145,78 126 C99 132,116 151,116 185Z"/>
+
+      <path class="leaf" d="M124 148 C151 130,160 108,156 91 C136 98,123 119,124 148Z"/>
+
+      <path class="leaf" d="M113 106 C89 92,81 71,85 54 C103 62,114 82,113 106Z"/>
+
+      <path class="flower-line" d="M67 18 C56 7,40 9,37 22 C34 34,48 41,58 34 C60 46,77 49,84 38 C91 26,80 15,67 18Z"/>
+
+    </svg>
+
+    <svg class="botanical right" viewBox="0 0 170 270" aria-hidden="true">
+
+      <path class="stem" d="M145 258 C120 218,112 180,120 138 C128 94,104 57,67 18"/>
+
+      <path class="leaf" d="M116 185 C84 170,75 145,78 126 C99 132,116 151,116 185Z"/>
+
+      <path class="leaf" d="M124 148 C151 130,160 108,156 91 C136 98,123 119,124 148Z"/>
+
+      <path class="leaf" d="M113 106 C89 92,81 71,85 54 C103 62,114 82,113 106Z"/>
+
+      <path class="flower-line" d="M67 18 C56 7,40 9,37 22 C34 34,48 41,58 34 C60 46,77 49,84 38 C91 26,80 15,67 18Z"/>
+
+    </svg>
+
+    <!-- 1. BIENVENIDA -->
+
+    <section class="section hero reveal">
+
+      <img class="floral-img top-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <p class="kicker">Bienvenidos a nuestra boda</p>
+
+      <h1 class="script hero-names">
+
+        <span data-bride></span><br>
+
+        <span style="font-size:.58em">&amp;</span><br>
+
+        <span data-groom></span>
+
+      </h1>
+
+      <div class="divider"><span class="leaf-mark"></span></div>
+
+      <p class="copy" id="welcomeMessage"></p>
+
+      <div class="hero-date-small"><span data-date-number></span> · <span data-month></span> · <span data-year></span></div>
+
+    </section>
+
+    <!-- 2. FOTO DE LOS NOVIOS -->
+
+    <section class="section compact soft reveal">
+
+      <img class="floral-img top-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <p class="kicker">Nuestro camino</p>
+
+      <h2 class="script section-title">Juntos</h2>
+
+      <div class="photo-frame">
+
+        <span class="photo-fallback" id="photoFallback">Aquí irá la fotografía de los novios<br>assets/foto-novios.jpg</span>
+
+        <img id="couplePhoto" alt="Fotografía de los novios" hidden>
+
+      </div>
+
+      <p class="copy strong" id="coupleMessage"></p>
+
+    </section>
+
+    <!-- 3. MENSAJE -->
+
+    <section class="section reveal">
+
+      <img class="floral-img top-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <p class="kicker">Nuestra historia continúa</p>
+
+      <h2 class="script section-title">Nos casamos</h2>
+
+      <div class="divider"><span class="leaf-mark"></span></div>
+
+      <p class="copy" id="mainMessage"></p>
+
+    </section>
+
+    <!-- 4. FECHA Y HORA -->
+
+    <section class="section soft reveal">
+
+      <img class="floral-img top-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <p class="kicker">Guarda la fecha</p>
+
+      <h2 class="script section-title">El gran día</h2>
+
+      <p class="copy" id="dateMessage"></p>
+
+      <div class="date-box">
+
+        <div class="date-side" data-day></div>
+
+        <div class="date-number" data-date-number></div>
+
+        <div class="date-side" data-time></div>
+
+      </div>
+
+      <div class="month" style="margin-top:23px" data-month></div>
+
+      <div class="year" data-year></div>
+
+    </section>
+
+    <!-- 5. CUENTA REGRESIVA -->
+
+    <section class="section compact reveal">
+
+      <p class="kicker">Cada vez falta menos</p>
+
+      <h2 class="script section-title">Cuenta regresiva</h2>
+
+      <div class="countdown" id="countdown">
+
+        <div class="count"><strong id="days">00</strong><span>Días</span></div>
+
+        <div class="count"><strong id="hours">00</strong><span>Horas</span></div>
+
+        <div class="count"><strong id="minutes">00</strong><span>Minutos</span></div>
+
+        <div class="count"><strong id="seconds">00</strong><span>Segundos</span></div>
+
+      </div>
+
+      <p class="copy" id="countdownDone" hidden style="margin-top:20px">Hoy comienza nuestra nueva historia.</p>
+
+    </section>
+
+    <!-- 6. UBICACIÓN -->
+
+    <section class="section soft reveal">
+
+      <img class="floral-img top-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <div class="icon-slot">
+
+        <img src="assets/icono-ubicacion.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+
+        <svg class="icon-fallback" style="display:none" viewBox="0 0 24 24" aria-hidden="true">
+
+          <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+
+          <circle cx="12" cy="10" r="2.6"></circle>
+
+        </svg>
+
+      </div>
+
+      <p class="kicker">Ceremonia &amp; recepción</p>
+
+      <h2 class="script section-title">El lugar</h2>
+
+      <p class="copy" id="locationMessage"></p>
+
+      <div class="place-card">
+
+        <p class="venue" data-venue></p>
+
+        <p class="address" data-address></p>
+
+        <a class="btn outline" id="mapsBtn" href="#" target="_blank" rel="noopener">Ver ubicación</a>
+
+      </div>
+
+    </section>
+
+    <!-- 7. CÓDIGO DE VESTIMENTA -->
+
+    <section class="section reveal">
+
+      <img class="floral-img top-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <div class="icon-slot">
+
+        <img src="assets/icono-vestimenta.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+
+        <svg class="icon-fallback" style="display:none" viewBox="0 0 24 24" aria-hidden="true">
+
+          <path d="M8 3 4 6l2 4 2-1v12h8V9l2 1 2-4-4-3c-.8 1.7-2 2.5-4 2.5S8.8 4.7 8 3Z"></path>
+
+        </svg>
+
+      </div>
+
+      <p class="kicker">Código de vestimenta</p>
+
+      <h2 class="script section-title">Dress code</h2>
+
+      <div class="dress-title">Formal</div>
+
+      <p class="copy" id="dressMessage"></p>
+
+      <div class="swatches" aria-label="Colores reservados">
+
+        <div class="swatch-wrap"><div class="swatch white"></div><div class="swatch-label">Blanco</div></div>
+
+        <div class="swatch-wrap"><div class="swatch pearl"></div><div class="swatch-label">Perla</div></div>
+
+        <div class="swatch-wrap"><div class="swatch beige"></div><div class="swatch-label">Beige</div></div>
+
+        <div class="swatch-wrap"><div class="swatch red"></div><div class="swatch-label">Rojo</div></div>
+
+      </div>
+
+      <p class="copy" style="font-size:.98rem">Estos colores están reservados para la celebración.</p>
+
+    </section>
+
+    <!-- 8. ITINERARIO -->
+
+    <section class="section soft reveal">
+
+      <img class="floral-img top-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <div class="icon-slot">
+
+        <img src="assets/icono-itinerario.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+
+        <svg class="icon-fallback" style="display:none" viewBox="0 0 24 24" aria-hidden="true">
+
+          <circle cx="12" cy="12" r="9"></circle>
+
+          <path d="M12 7v5l3 2"></path>
+
+        </svg>
+
+      </div>
+
+      <p class="kicker">Nuestro día</p>
+
+      <h2 class="script section-title">Itinerario</h2>
+
+      <p class="copy" id="itineraryMessage"></p>
+
+      <div class="timeline" id="timeline"></div>
+
+    </section>
+
+    <!-- 9. CONFIRMACIÓN -->
+
+    <section class="section reveal">
+
+      <img class="floral-img top-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <div class="icon-slot">
+
+        <img src="assets/icono-whatsapp.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+
+        <svg class="icon-fallback" style="display:none" viewBox="0 0 24 24" aria-hidden="true">
+
+          <path d="M20 11.7A8 8 0 0 1 8.2 18.8L4 20l1.2-4.1A8 8 0 1 1 20 11.7Z"></path>
+
+          <path d="M9 8.5c.8 2.5 2.2 4 5 5"></path>
+
+        </svg>
+
+      </div>
+
+      <p class="kicker">¿Nos acompañas?</p>
+
+      <h2 class="script section-title">Confirma tu asistencia</h2>
+
+      <p class="copy" id="confirmationMessage" style="margin-bottom:25px"></p>
+
+      <a class="btn" id="whatsappBtn" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+
+    </section>
+
+    <!-- 10. AGRADECIMIENTO -->
+
+    <section class="section thanks soft reveal">
+
+      <img class="floral-img bottom-left" src="assets/flores-esquina-1.png" alt="" onerror="this.style.display='none'">
+
+      <img class="floral-img bottom-right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
+
+      <p class="kicker">Con todo nuestro cariño</p>
+
+      <h2 class="script section-title">Gracias</h2>
+
+      <div class="divider"><span class="leaf-mark"></span></div>
+
+      <p class="copy strong" id="thanksMessage"></p>
+
+      <h3 class="script final-names">
+
+        <span data-bride></span> &amp; <span data-groom></span>
+
+      </h3>
+
+      <div class="hero-date-small"><span data-date-number></span> · <span data-month></span> · <span data-year></span></div>
+
+    </section>
+
+  </main>
+
+  <script>
+
+    const $ = (selector) => document.querySelector(selector);
+
+    const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+    const gate = $("#gate");
+
+    const openBtn = $("#openInvitation");
+
+    const music = $("#bgMusic");
+
+    const musicToggle = $("#musicToggle");
+
+    function setAll(selector, value){
+
+      $$(selector).forEach(el => el.textContent = value);
+
+    }
+
+    function validUrl(value){
+
+      return typeof value === "string" && value.trim() && value.trim() !== "#";
+
+    }
+function configure(){
+
+      document.title = `${CONFIG.brideName} & ${CONFIG.groomName} | Nuestra Boda`;
+
+      setAll("[data-bride]", CONFIG.brideName);
+
+      setAll("[data-groom]", CONFIG.groomName);
+
+      setAll("[data-day]", CONFIG.dayText);
+
+      setAll("[data-date-number]", CONFIG.dateNumber);
+
+      setAll("[data-month]", CONFIG.monthText);
+
+      setAll("[data-year]", CONFIG.yearText);
+
+      setAll("[data-time]", CONFIG.timeText);
+
+      setAll("[data-venue]", CONFIG.venueName);
+
+      setAll("[data-address]", CONFIG.address);
+$("#openingMessage").textContent = CONFIG.openingMessage;
+
+      $("#welcomeMessage").textContent = CONFIG.welcomeMessage;
+
+      $("#coupleMessage").textContent = CONFIG.coupleMessage;
+
+      $("#mainMessage").textContent = CONFIG.mainMessage;
+
+      $("#dateMessage").textContent = CONFIG.dateMessage;
+
+      $("#locationMessage").textContent = CONFIG.locationMessage;
+
+      $("#dressMessage").textContent = CONFIG.dressMessage;
+
+      $("#itineraryMessage").textContent = CONFIG.itineraryMessage;
+
+      $("#confirmationMessage").textContent = CONFIG.confirmationMessage;
+
+      $("#thanksMessage").textContent = CONFIG.thanksMessage;
+
+      /* Foto */
+
+      const photo = $("#couplePhoto");
+
+      const fallback = $("#photoFallback");
+
+      if(CONFIG.couplePhoto){
+
+        photo.src = CONFIG.couplePhoto;
+
+        photo.onload = () => {
+
+          photo.hidden = false;
+
+          fallback.hidden = true;
+
+        };
+
+        photo.onerror = () => {
+
+          photo.hidden = true;
+
+          fallback.hidden = false;
+
+        };
+
+      }
+
+      /* Música */
+
+      music.src = CONFIG.musicFile || "";
+
+      music.volume = 0.30;
+
+      /* Maps */
+
+      const mapsBtn = $("#mapsBtn");
+
+      if(validUrl(CONFIG.mapsUrl)){
+
+        mapsBtn.href = CONFIG.mapsUrl;
+
+      }else{
+
+        mapsBtn.classList.add("disabled");
+
+        mapsBtn.setAttribute("aria-disabled","true");
+
+      }
+
+      /* WhatsApp */
+
+      const number = (CONFIG.whatsappNumber || "").replace(/\D/g,"");
+
+      const wa = $("#whatsappBtn");
+
+      if(number){
+
+        wa.href = `https://wa.me/${number}?text=${encodeURIComponent(CONFIG.whatsappMessage || "")}`;
+
+      }else{
+
+        wa.classList.add("disabled");
+
+        wa.setAttribute("aria-disabled","true");
+
+      }
+
+      /* Itinerario */
+
+      const timeline = $("#timeline");
+
+      timeline.innerHTML = "";
+
+      (CONFIG.itinerary || []).forEach(item => {
+
+        const row = document.createElement("div");
+
+        row.className = "timeline-item";
+
+        row.innerHTML = `
+
+          <div class="time">${item.time || ""}</div>
+
+          <div class="timeline-dot"></div>
+
+          <div class="event-name">${item.name || ""}</div>
+
+        `;
+
+        timeline.appendChild(row);
+
+      });
+
+    }
+
+    function openInvitation(){
+
+      gate.classList.add("hide");
+
+      document.body.classList.add("invitation-open");
+
+      musicToggle.style.display = "grid";
+
+      if(music.src){
+
+        music.play()
+
+          .then(() => musicToggle.dataset.playing = "true")
+
+          .catch(() => musicToggle.dataset.playing = "false");
+
+      }
+
+      setTimeout(() => window.scrollTo({top:0, behavior:"smooth"}), 70);
+
+    }
+
+    function toggleMusic(){
+
+      if(!music.src) return;
+
+      if(music.paused){
+
+        music.play().then(() => musicToggle.dataset.playing = "true").catch(()=>{});
+
+      }else{
+
+        music.pause();
+
+        musicToggle.dataset.playing = "false";
+
+      }
+
+    }
+
+    function startCountdown(){
+
+      const target = new Date(CONFIG.eventDate).getTime();
+
+      if(Number.isNaN(target)) return;
+
+      const d = $("#days");
+
+      const h = $("#hours");
+
+      const m = $("#minutes");
+
+      const s = $("#seconds");
+
+      const box = $("#countdown");
+
+      const done = $("#countdownDone");
+
+      let timer;
+
+      function update(){
+
+        let diff = target - Date.now();
+
+        if(diff <= 0){
+
+          d.textContent = h.textContent = m.textContent = s.textContent = "00";
+
+          box.hidden = true;
+
+          done.hidden = false;
+
+          if(timer) clearInterval(timer);
+
+          return;
+
+        }
+
+        const days = Math.floor(diff / 86400000);
+
+        diff %= 86400000;
+
+        const hours = Math.floor(diff / 3600000);
+
+        diff %= 3600000;
+
+        const minutes = Math.floor(diff / 60000);
+
+        diff %= 60000;
+
+        const seconds = Math.floor(diff / 1000);
+
+        d.textContent = String(days).padStart(2,"0");
+
+        h.textContent = String(hours).padStart(2,"0");
+
+        m.textContent = String(minutes).padStart(2,"0");
+
+        s.textContent = String(seconds).padStart(2,"0");
+
+      }
+
+      update();
+
+      timer = setInterval(update,1000);
+
+    }
+
+    function setupReveal(){
+
+      const elements = $$(".reveal");
+
+      if(!("IntersectionObserver" in window)){
+
+        elements.forEach(el => el.classList.add("show"));
+
+        return;
+
+      }
+
+      const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      }, {threshold:.12});
+
+      elements.forEach(el => observer.observe(el));
+
+    }
+
+    configure();
+
+    startCountdown();
+
+    setupReveal();
+
+    openBtn.addEventListener("click", openInvitation);
+
+    musicToggle.addEventListener("click", toggleMusic);
+
+  </script>
+
+</body>
+
+</html>
