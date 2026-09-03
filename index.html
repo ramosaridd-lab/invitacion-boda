@@ -510,11 +510,12 @@
 
       z-index:1000;
 
-      display:grid;
-
-      place-items:center;
-
-      padding:24px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100svh;
+      
+      padding:20px;
 
       background:
 
@@ -526,7 +527,8 @@
 
       transition:opacity .85s ease, visibility .85s ease;
 
-      overflow:hidden;
+      overflow-x:hidden;
+      overflow-y: auto;
 
     }
 
@@ -540,28 +542,7 @@
 
     }
 
-    .gate::before,
-
-    .gate::after{
-
-      content:"";
-
-      position:absolute;
-
-      width:250px;
-
-      height:340px;
-
-      border:1px solid rgba(111,119,79,.15);
-
-      border-radius:50%;
-
-      transform:rotate(35deg);
-
-    }
-
-    .gate::before{left:-145px;top:-135px}
-
+   
     .gate::after{right:-155px;bottom:-145px}
 
     .gate-card{
@@ -662,7 +643,7 @@
 
       font-family:"Great Vibes",cursive;
 
-      font-size:3.5rem;
+      font-size:3rem;
 
       line-height:.95;
 
@@ -680,7 +661,7 @@
 
       color:#746f66;
 
-      font-size:1.12rem;
+      font-size:1rem;
 
       line-height:1.65;
 
@@ -1419,7 +1400,37 @@
       .timeline-item{grid-template-columns:57px 23px 1fr;gap:0 10px}
 
     }
+    @media (max-width:480px){
 
+  .gate{
+    align-items:flex-start;
+    padding:14px 12px 30px;
+  }
+
+  .gate-card{
+    width:100%;
+    max-width:390px;
+    margin:10px auto 0;
+
+    padding:34px 18px 32px;
+  }
+
+  .gate-logo{
+    width:205px;
+    max-width:78%;
+    margin-bottom:18px;
+  }
+
+  .gate-title{
+    font-size:3rem;
+  }
+
+  .gate-copy{
+    max-width:290px;
+    padding:0 5px;
+  }
+
+}
     @media (prefers-reduced-motion:reduce){
 
       *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
