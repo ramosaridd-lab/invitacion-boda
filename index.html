@@ -126,13 +126,15 @@
 
       overflow:hidden;
 
+      /* Fondo muy sutil: pocas hojitas separadas */
       background:
-
-        linear-gradient(rgba(255,254,251,.95), rgba(255,254,251,.95)),
-
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='760' viewBox='0 0 480 760'%3E%3Cg fill='%23a9ae90' opacity='.11'%3E%3Cpath d='M44 92 C55 81 68 80 76 84 C70 98 59 106 44 92Z'/%3E%3Cpath d='M404 224 C417 212 431 212 438 217 C431 231 419 238 404 224Z'/%3E%3Cpath d='M74 488 C85 477 98 476 106 481 C100 494 89 502 74 488Z'/%3E%3Cpath d='M389 655 C401 643 415 643 423 648 C417 662 405 669 389 655Z'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(rgba(255,254,251,.97), rgba(255,254,251,.97)),
         url("assets/textura-papel.png");
 
-      background-size:auto, 500px;
+      background-size:100% auto, auto, 500px;
+      background-repeat:repeat-y, no-repeat, repeat;
+      background-position:center top, center, center;
 
       box-shadow:0 0 0 1px rgba(79,88,55,.05);
 
@@ -269,86 +271,127 @@
       font-style:italic;
 
     }
+
     .parents-section{
+
   position:relative;
+
   width:min(100%, 350px);
+
   margin:42px auto 5px;
+
   padding:32px 24px;
 
   border-top:1px solid rgba(111,119,79,.20);
+
   border-bottom:1px solid rgba(111,119,79,.20);
 
   text-align:center;
+
 }
 
 .parents-group{
+
   position:relative;
+
 }
 
 .parents-label{
+
   margin-bottom:12px;
 
   font-family:"Cinzel", serif;
+
   font-size:.72rem;
+
   font-weight:500;
 
   letter-spacing:.18em;
+
   text-transform:uppercase;
 
   color:var(--olive);
+
 }
 
 .parents-names{
+
   font-family:"Playfair Display", Georgia, serif;
+
   font-size:1.12rem;
+
   line-height:1.65;
 
   color:#5f5a51;
+
 }
 
 .parents-names div{
+
   margin:2px 0;
+
 }
 
 .parents-ornament{
+
   position:relative;
+
   width:100px;
+
   height:32px;
+
   margin:19px auto;
+
 }
 
 .parents-ornament::before,
+
 .parents-ornament::after{
+
   content:"";
+
   position:absolute;
+
   top:50%;
 
   width:35px;
+
   height:1px;
 
   background:rgba(111,119,79,.30);
+
 }
 
 .parents-ornament::before{
+
   left:0;
+
 }
 
 .parents-ornament::after{
+
   right:0;
+
 }
 
 .parents-ornament span{
+
   position:absolute;
+
   left:50%;
+
   top:50%;
 
   width:9px;
+
   height:15px;
 
   border:1px solid var(--olive);
+
   border-radius:100% 0 100% 0;
 
   transform:translate(-50%,-50%) rotate(-40deg);
+
 }
 
     .divider{
@@ -405,6 +448,29 @@
 
       opacity:.84;
 
+    }
+
+    /* Solo el separador inicial usa la imagen de los anillos */
+    .divider-rings{
+      height:34px;
+      margin-top:18px;
+      margin-bottom:22px;
+    }
+
+    .divider-rings::before,
+    .divider-rings::after{
+      top:17px;
+    }
+
+    .divider-icon{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width:32px;
+      height:32px;
+      object-fit:contain;
+      z-index:2;
     }
 
     /* =========================================================
@@ -592,23 +658,29 @@
       z-index:1000;
 
       display:flex;
+
       justify-content: center;
+
       align-items: center;
+
       min-height: 100svh;
-      
+
       padding:20px;
 
       background:
-
-        radial-gradient(circle at 20% 12%, rgba(111,119,79,.13), transparent 26%),
-
-        radial-gradient(circle at 82% 84%, rgba(169,174,144,.18), transparent 26%),
-
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='760' viewBox='0 0 480 760'%3E%3Cg fill='%23a9ae90' opacity='.08'%3E%3Cpath d='M50 100 C61 89 73 89 81 93 C75 106 64 113 50 100Z'/%3E%3Cpath d='M397 254 C409 243 422 243 430 248 C424 261 412 268 397 254Z'/%3E%3Cpath d='M82 604 C94 593 107 593 115 598 C109 611 97 618 82 604Z'/%3E%3C/g%3E%3C/svg%3E"),
+        radial-gradient(circle at 20% 12%, rgba(111,119,79,.10), transparent 26%),
+        radial-gradient(circle at 82% 84%, rgba(169,174,144,.12), transparent 26%),
         var(--paper);
+
+      background-size:100% auto, auto, auto, auto;
+      background-repeat:no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position:center top, center, center, center;
 
       transition:opacity .85s ease, visibility .85s ease;
 
       overflow-x:hidden;
+
       overflow-y: auto;
 
     }
@@ -623,7 +695,6 @@
 
     }
 
-   
     .gate::after{right:-155px;bottom:-145px}
 
     .gate-card{
@@ -1235,26 +1306,35 @@
     .red{background:#FF2D05}
 
    /* =========================================================
+
    ITINERARIO ALTERNADO
+
    ========================================================= */
 
 .timeline{
+
   position:relative;
 
   width:100%;
+
   max-width:360px;
 
   margin:38px auto 0;
+
   padding:10px 0;
+
 }
 
 /* Línea perfectamente centrada */
+
 .timeline::before{
+
   content:"";
 
   position:absolute;
 
   top:40px;
+
   bottom:40px;
 
   left:50%;
@@ -1266,17 +1346,23 @@
   transform:translateX(-50%);
 
   z-index:0;
+
 }
 
 /* Cada actividad */
+
 .timeline-item{
+
   position:relative;
 
   display:grid;
 
   grid-template-columns:
+
     minmax(0,1fr)
+
     54px
+
     minmax(0,1fr);
 
   width:100%;
@@ -1284,154 +1370,217 @@
   min-height:185px;
 
   align-items:center;
+
 }
 
 /* Centro donde va el corazón */
+
 .timeline-marker{
+
   position:relative;
 
   grid-column:2;
+
   grid-row:1;
 
   width:54px;
+
   height:54px;
 
   margin:auto;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   z-index:5;
+
 }
 
 /* Imagen del círculo + corazón */
+
 .timeline-heart{
+
   display:block;
 
   width:54px;
+
   height:54px;
 
   object-fit:contain;
+
 }
 
 /* Contenido */
+
 .timeline-content{
+
   width:100%;
+
   max-width:135px;
 
   display:flex;
+
   flex-direction:column;
 
   align-items:center;
+
   justify-content:center;
 
   text-align:center;
+
 }
 
 /* Elementos impares - izquierda */
+
 .timeline-item:nth-child(odd) .timeline-content{
+
   grid-column:1;
+
   grid-row:1;
 
   justify-self:center;
 
   padding-right:8px;
+
 }
 
 /* Elementos pares - derecha */
+
 .timeline-item:nth-child(even) .timeline-content{
+
   grid-column:3;
+
   grid-row:1;
 
   justify-self:center;
 
   padding-left:8px;
+
 }
 
 /* Imagen de cada actividad */
+
 .timeline-icon{
+
   display:block;
 
   width:72px;
+
   height:72px;
 
   margin:0 auto 12px;
 
   object-fit:contain;
+
 }
 
 /* Nombre */
+
 .event-name{
+
   margin:0 0 7px;
 
   font-family:"Playfair Display", Georgia, serif;
 
   font-size:1.08rem;
+
   font-weight:500;
 
   line-height:1.25;
 
   color:#5e5a50;
+
 }
 
 /* Hora */
+
 .time{
+
   font-family:"Cinzel", serif;
 
   font-size:.70rem;
+
   font-weight:500;
 
   letter-spacing:.07em;
 
   color:var(--olive);
+
 }
 
 /* CELULAR */
+
 @media (max-width:480px){
 
   .timeline{
+
     width:100%;
+
     max-width:340px;
 
     margin-left:auto;
+
     margin-right:auto;
+
   }
 
   .timeline-item{
+
     grid-template-columns:
+
       minmax(0,1fr)
+
       48px
+
       minmax(0,1fr);
 
     min-height:175px;
+
   }
 
   .timeline-marker{
+
     width:48px;
+
     height:48px;
+
   }
 
   .timeline-heart{
+
     width:48px;
+
     height:48px;
+
   }
 
   .timeline-content{
+
     max-width:125px;
+
   }
 
   .timeline-icon{
+
     width:66px;
+
     height:66px;
+
   }
 
   .event-name{
+
     font-size:1rem;
+
   }
 
   .time{
+
     font-size:.65rem;
+
   }
 
 }
@@ -1577,37 +1726,55 @@
       .count strong{font-size:1.48rem}
 
     }
+
     @media (max-width:480px){
 
   .gate{
+
     align-items:flex-start;
+
     padding:14px 12px 30px;
+
   }
 
   .gate-card{
+
     width:100%;
+
     max-width:390px;
+
     margin:10px auto 0;
 
     padding:34px 18px 32px;
+
   }
 
   .gate-logo{
+
     width:205px;
+
     max-width:78%;
+
     margin-bottom:18px;
+
   }
 
   .gate-title{
+
     font-size:3rem;
+
   }
 
   .gate-copy{
+
     max-width:290px;
+
     padding:0 5px;
+
   }
 
 }
+
     @media (prefers-reduced-motion:reduce){
 
       *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
@@ -1637,16 +1804,22 @@
       groomName: "Frank",
 
       brideParents: [
+
           "Carmen Gonzales Maldonado"
+
         ],
 
         groomParents: [
+
           "Candelaria Arista Amado",
+
           "Jaime Ronald Ramos Aquino"
+
         ],
+
       /* Fecha completa para la cuenta regresiva */
 
-      eventDate: "2026-09-26T17:00:00-05:00",
+      eventDate: "2026-09-26T18:00:00-05:00",
 
       /* Texto visual de la fecha */
 
@@ -1659,6 +1832,8 @@
       yearText: "2026",
 
       timeText: "18:00 Hrs.",
+
+      venueName: "Recepciones Costa Azul",
 
       /* Ceremonia y recepción serán en el mismo lugar */
 
@@ -1684,7 +1859,7 @@
 
       welcomeMessage: "Con mucha alegría queremos compartir contigo uno de los días más importantes de nuestras vidas.",
 
-      coupleMessage: "Con la bendición de Dios y nuestros padres, tenemos el agrado de invitarles a nuesta boda",
+      coupleMessage: "Con la bendición de Dios y nuestros padres, tenemos el agrado de invitarles a nuestra boda",
 
       mainMessage: "El amor nos llevó hasta aquí y queremos celebrar este nuevo comienzo rodeados de las personas que forman parte de nuestra historia.",
 
@@ -1741,9 +1916,13 @@
       <img class="gate-vine right" src="assets/flores-esquina-2.png" alt="" onerror="this.style.display='none'">
 
       <img
+
         src="assets/logo-boda.png"
+
         alt="Logo de la boda de Leia y Frank"
+
         class="gate-logo"
+
       >
 
       <div class="gate-label">Nuestra boda</div>
@@ -1834,7 +2013,14 @@
 
       </h1>
 
-      <div class="divider"><span class="leaf-mark"></span></div>
+      <div class="divider divider-rings">
+        <img
+          src="assets/anillos.png"
+          alt="Anillos de boda"
+          class="divider-icon"
+          onerror="this.style.display='none'"
+        >
+      </div>
 
       <p class="copy" id="welcomeMessage"></p>
 
@@ -1863,25 +2049,33 @@
       </div>
 
       <p class="copy strong" id="coupleMessage"></p>
+
       <div class="parents-section">
 
   <div class="parents-group">
+
     <div class="parents-label">Madre de la novia</div>
 
     <div class="parents-names" id="brideParents"></div>
+
   </div>
 
   <div class="parents-ornament">
+
     <span></span>
+
   </div>
 
   <div class="parents-group">
+
     <div class="parents-label">Padres del novio</div>
 
     <div class="parents-names" id="groomParents"></div>
+
   </div>
 
 </div>
+
     </section>
 
     <!-- 3. MENSAJE -->
@@ -2157,6 +2351,7 @@
       return typeof value === "string" && value.trim() && value.trim() !== "#";
 
     }
+
 function configure(){
 
       document.title = `${CONFIG.brideName} & ${CONFIG.groomName} | Nuestra Boda`;
@@ -2178,20 +2373,27 @@ function configure(){
       setAll("[data-venue]", CONFIG.venueName);
 
       setAll("[data-address]", CONFIG.address);
+
 $("#openingMessage").textContent = CONFIG.openingMessage;
 
       $("#welcomeMessage").textContent = CONFIG.welcomeMessage;
 
       $("#coupleMessage").textContent = CONFIG.coupleMessage;
+
       const brideParents = $("#brideParents");
+
 const groomParents = $("#groomParents");
 
 brideParents.innerHTML = CONFIG.brideParents
+
   .map(name => `<div>${name}</div>`)
+
   .join("");
 
 groomParents.innerHTML = CONFIG.groomParents
+
   .map(name => `<div>${name}</div>`)
+
   .join("");
 
       $("#mainMessage").textContent = CONFIG.mainMessage;
@@ -2281,6 +2483,7 @@ groomParents.innerHTML = CONFIG.groomParents
       const timeline = $("#timeline");
 
       timeline.innerHTML = "";
+
       (CONFIG.itinerary || []).forEach((item, index) => {
 
   const row = document.createElement("div");
@@ -2292,27 +2495,43 @@ groomParents.innerHTML = CONFIG.groomParents
     <div class="timeline-content">
 
       <img
+
         class="timeline-icon"
+
         src="${item.icon || ""}"
+
         alt="${item.name || ""}"
+
         onerror="this.style.visibility='hidden'"
+
       >
 
       <div class="event-name">
+
         ${item.name || ""}
+
       </div>
 
       <div class="time">
+
         ${item.time || ""}
+
       </div>
 
     </div>
+
 <div class="timeline-marker">
+
   <img
+
     src="assets/corazon-itinerario.png"
+
     alt=""
+
     class="timeline-heart"
+
   >
+
 </div>
 
   `;
