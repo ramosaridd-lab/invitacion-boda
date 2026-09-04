@@ -248,7 +248,7 @@
 
       font-family:"Playfair Display", Georgia, serif;
 
-      font-size:1.18rem;
+      font-size:1rem;
 
       line-height:1.78;
 
@@ -269,6 +269,87 @@
       font-style:italic;
 
     }
+    .parents-section{
+  position:relative;
+  width:min(100%, 350px);
+  margin:42px auto 5px;
+  padding:32px 24px;
+
+  border-top:1px solid rgba(111,119,79,.20);
+  border-bottom:1px solid rgba(111,119,79,.20);
+
+  text-align:center;
+}
+
+.parents-group{
+  position:relative;
+}
+
+.parents-label{
+  margin-bottom:12px;
+
+  font-family:"Cinzel", serif;
+  font-size:.72rem;
+  font-weight:500;
+
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:var(--olive);
+}
+
+.parents-names{
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:1.12rem;
+  line-height:1.65;
+
+  color:#5f5a51;
+}
+
+.parents-names div{
+  margin:2px 0;
+}
+
+.parents-ornament{
+  position:relative;
+  width:100px;
+  height:32px;
+  margin:19px auto;
+}
+
+.parents-ornament::before,
+.parents-ornament::after{
+  content:"";
+  position:absolute;
+  top:50%;
+
+  width:35px;
+  height:1px;
+
+  background:rgba(111,119,79,.30);
+}
+
+.parents-ornament::before{
+  left:0;
+}
+
+.parents-ornament::after{
+  right:0;
+}
+
+.parents-ornament span{
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:9px;
+  height:15px;
+
+  border:1px solid var(--olive);
+  border-radius:100% 0 100% 0;
+
+  transform:translate(-50%,-50%) rotate(-40deg);
+}
 
     .divider{
 
@@ -1007,9 +1088,9 @@
 
     .icon-slot img{
 
-      width:30px;
+      width:54px;
 
-      height:30px;
+      height:54px;
 
       object-fit:contain;
 
@@ -1153,102 +1234,185 @@
 
     .red{background:#FF2D05}
 
-    /* =========================================================
+   /* =========================================================
+   ITINERARIO ALTERNADO
+   ========================================================= */
 
-       ITINERARIO
+.timeline{
+  position:relative;
+  width:min(100%, 390px);
+  margin:38px auto 0;
+  padding:10px 0;
+}
 
-       ========================================================= */
+/* Línea central */
+.timeline::before{
+  content:"";
+  position:absolute;
+  top:55px;
+  bottom:55px;
+  left:50%;
+  width:2px;
 
-    .timeline{
+  background:rgba(111,119,79,.55);
 
-      position:relative;
+  transform:translateX(-50%);
+}
 
-      width:min(100%, 350px);
+/* Cada actividad */
+.timeline-item{
+  position:relative;
 
-      margin:30px auto 0;
+  display:grid;
+  grid-template-columns:1fr 46px 1fr;
 
-      text-align:left;
+  width:100%;
+  min-height:175px;
 
-    }
+  align-items:center;
+}
 
-    .timeline::before{
+/* Punto central */
+.timeline-marker{
+  position:relative;
+  z-index:5;
 
-      content:"";
+  grid-column:2;
 
-      position:absolute;
+  width:42px;
+  height:42px;
 
-      left:76px;
+  margin:auto;
 
-      top:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      bottom:6px;
+  border-radius:50%;
 
-      width:1px;
+  background:var(--olive);
 
-      background:var(--line);
+  color:white;
 
-    }
+  font-size:18px;
 
-    .timeline-item{
+  box-shadow:
+    0 0 0 5px var(--white);
+}
 
-      position:relative;
+/* corazón */
+.timeline-marker span{
+  display:block;
+  transform:translateY(-1px);
+}
 
-      display:grid;
+/* Contenido */
+.timeline-content{
+  width:100%;
+  max-width:145px;
 
-      grid-template-columns:63px 26px 1fr;
+  text-align:center;
 
-      gap:0 13px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
 
-      align-items:center;
+/* Elementos impares a la izquierda */
+.timeline-item:nth-child(odd) .timeline-content{
+  grid-column:1;
+  grid-row:1;
 
-      min-height:73px;
+  justify-self:end;
 
-    }
+  padding-right:12px;
+}
 
-    .time{
+/* Elementos pares a la derecha */
+.timeline-item:nth-child(even) .timeline-content{
+  grid-column:3;
+  grid-row:1;
 
-      text-align:right;
+  justify-self:start;
 
-      font-family:"Cinzel", serif;
+  padding-left:12px;
+}
 
-      font-size:.62rem;
+/* Imagen del ícono */
+.timeline-icon{
+  width:72px;
+  height:72px;
 
-      letter-spacing:.04em;
+  margin:0 auto 13px;
 
-      color:var(--olive);
+  object-fit:contain;
+}
 
-    }
+/* Nombre actividad */
+.event-name{
+  font-family:"Playfair Display", Georgia, serif;
 
-    .timeline-dot{
+  font-size:1.14rem;
+  font-weight:500;
 
-      position:relative;
+  line-height:1.25;
 
-      z-index:2;
+  color:#5e5a50;
 
-      width:9px;
+  margin-bottom:8px;
+}
 
-      height:9px;
+/* Hora */
+.time{
+  font-family:"Cinzel", serif;
 
-      margin:auto;
+  font-size:.76rem;
+  font-weight:500;
 
-      border:2px solid var(--olive);
+  letter-spacing:.08em;
 
-      border-radius:50%;
+  color:var(--olive);
+}
 
-      background:var(--white);
+/* Celular */
+@media (max-width:390px){
 
-    }
+  .timeline{
+    width:100%;
+  }
 
-    .event-name{
+  .timeline-item{
+    grid-template-columns:1fr 42px 1fr;
+    min-height:165px;
+  }
 
-      font-family:"Playfair Display", Georgia, serif;
+  .timeline-marker{
+    width:38px;
+    height:38px;
 
-      font-size:1.15rem;
+    font-size:16px;
+  }
 
-      color:var(--ink);
+  .timeline-content{
+    max-width:125px;
+  }
 
-    }
+  .timeline-icon{
+    width:62px;
+    height:62px;
+  }
 
+  .event-name{
+    font-size:1.03rem;
+  }
+
+  .time{
+    font-size:.67rem;
+  }
+
+}
+    
     /* =========================================================
 
        CIERRE
@@ -1459,6 +1623,14 @@
 
       groomName: "Frank",
 
+      brideParents: [
+          "Carmen Gonzales Maldonado"
+        ],
+
+        groomParents: [
+          "Candelaria Arista Amado",
+          "Jaime Ronald Ramos Aquino"
+        ],
       /* Fecha completa para la cuenta regresiva */
 
       eventDate: "2026-09-26T17:00:00-05:00",
@@ -1477,9 +1649,7 @@
 
       /* Ceremonia y recepción serán en el mismo lugar */
 
-      venueName: "Producciones Costa Azul",
-
-      address: "Av. La Playa Mz D - Ventanilla (al costado del colegio Heroes del Pacifico)",
+      address: "Av. La Playa Mz D - Ventanilla (Al costado del colegio Heroes del Pacifico)",
 
       mapsUrl: "https://maps.app.goo.gl/Xpv6e9uS943DdyyA7?g_st=aw",
 
@@ -1501,7 +1671,7 @@
 
       welcomeMessage: "Con mucha alegría queremos compartir contigo uno de los días más importantes de nuestras vidas.",
 
-      coupleMessage: "Después de tantos momentos compartidos, ha llegado el día de comenzar una nueva historia juntos.",
+      coupleMessage: "Con la bendición de Dios y nuestros padres, tenemos el agrado de invitarles a nuesta boda",
 
       mainMessage: "El amor nos llevó hasta aquí y queremos celebrar este nuevo comienzo rodeados de las personas que forman parte de nuestra historia.",
 
@@ -1521,15 +1691,15 @@
 
       itinerary: [
 
-        { time: "18:00", name: "Bienvenida" },
+        { time: "18:00", name: "Bienvenida", icon: "assets/itinerario-bienvenida.png"},
 
-        { time: "19:00", name: "Ceremonia" },
+        { time: "19:00", name: "Ceremonia", icon: "assets/itinerario-ceremonia.png"},
 
-        { time: "20:00", name: "Baile de novios" },
+        { time: "20:00", name: "Baile de novios",  icon: "assets/itinerario-baile-novios.png"},
 
-        { time: "21:00", name: "Cena" },
+        { time: "21:00", name: "Cena", icon: "assets/itinerario-cena.png"  },
 
-        { time: "22:00", name: "Baile" }
+        { time: "22:00", name: "Baile", icon: "assets/itinerario-baile.png" }
 
       ]
 
@@ -1680,7 +1850,25 @@
       </div>
 
       <p class="copy strong" id="coupleMessage"></p>
+      <div class="parents-section">
 
+  <div class="parents-group">
+    <div class="parents-label">Madre de la novia</div>
+
+    <div class="parents-names" id="brideParents"></div>
+  </div>
+
+  <div class="parents-ornament">
+    <span></span>
+  </div>
+
+  <div class="parents-group">
+    <div class="parents-label">Padres del novio</div>
+
+    <div class="parents-names" id="groomParents"></div>
+  </div>
+
+</div>
     </section>
 
     <!-- 3. MENSAJE -->
@@ -1779,7 +1967,7 @@
 
       <p class="kicker">Ceremonia &amp; recepción</p>
 
-      <h2 class="script section-title">El lugar</h2>
+      <h2 class="script section-title">Recepciones Costa Azul</h2>
 
       <p class="copy" id="locationMessage"></p>
 
@@ -1982,6 +2170,16 @@ $("#openingMessage").textContent = CONFIG.openingMessage;
       $("#welcomeMessage").textContent = CONFIG.welcomeMessage;
 
       $("#coupleMessage").textContent = CONFIG.coupleMessage;
+      const brideParents = $("#brideParents");
+const groomParents = $("#groomParents");
+
+brideParents.innerHTML = CONFIG.brideParents
+  .map(name => `<div>${name}</div>`)
+  .join("");
+
+groomParents.innerHTML = CONFIG.groomParents
+  .map(name => `<div>${name}</div>`)
+  .join("");
 
       $("#mainMessage").textContent = CONFIG.mainMessage;
 
@@ -2070,26 +2268,42 @@ $("#openingMessage").textContent = CONFIG.openingMessage;
       const timeline = $("#timeline");
 
       timeline.innerHTML = "";
+      (CONFIG.itinerary || []).forEach((item, index) => {
 
-      (CONFIG.itinerary || []).forEach(item => {
+  const row = document.createElement("div");
 
-        const row = document.createElement("div");
+  row.className = "timeline-item";
 
-        row.className = "timeline-item";
+  row.innerHTML = `
 
-        row.innerHTML = `
+    <div class="timeline-content">
 
-          <div class="time">${item.time || ""}</div>
+      <img
+        class="timeline-icon"
+        src="${item.icon || ""}"
+        alt="${item.name || ""}"
+        onerror="this.style.visibility='hidden'"
+      >
 
-          <div class="timeline-dot"></div>
+      <div class="event-name">
+        ${item.name || ""}
+      </div>
 
-          <div class="event-name">${item.name || ""}</div>
+      <div class="time">
+        ${item.time || ""}
+      </div>
 
-        `;
+    </div>
 
-        timeline.appendChild(row);
+    <div class="timeline-marker">
+      <span>♥</span>
+    </div>
 
-      });
+  `;
+
+  timeline.appendChild(row);
+
+});
 
     }
 
