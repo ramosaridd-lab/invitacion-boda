@@ -820,11 +820,11 @@
 
     .hero{
 
-      min-height:100svh;
+      min-height:auto;
 
-      padding-top:110px;
+      padding-top:60px;
 
-      padding-bottom:110px;
+      padding-bottom:80px;
 
     }
 
@@ -1240,23 +1240,32 @@
 
 .timeline{
   position:relative;
-  width:min(100%, 390px);
+
+  width:100%;
+  max-width:360px;
+
   margin:38px auto 0;
   padding:10px 0;
 }
 
-/* Línea central */
+/* Línea perfectamente centrada */
 .timeline::before{
   content:"";
+
   position:absolute;
-  top:55px;
-  bottom:55px;
+
+  top:40px;
+  bottom:40px;
+
   left:50%;
+
   width:2px;
 
-  background:rgba(111,119,79,.55);
+  background:rgba(111,119,79,.45);
 
   transform:translateX(-50%);
+
+  z-index:0;
 }
 
 /* Cada actividad */
@@ -1264,23 +1273,28 @@
   position:relative;
 
   display:grid;
-  grid-template-columns:1fr 46px 1fr;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    54px
+    minmax(0,1fr);
 
   width:100%;
-  min-height:175px;
+
+  min-height:185px;
 
   align-items:center;
 }
 
-/* Punto central */
+/* Centro donde va el corazón */
 .timeline-marker{
   position:relative;
-  z-index:5;
 
   grid-column:2;
+  grid-row:1;
 
-  width:42px;
-  height:42px;
+  width:54px;
+  height:54px;
 
   margin:auto;
 
@@ -1288,110 +1302,119 @@
   align-items:center;
   justify-content:center;
 
-  border-radius:50%;
-
-  background:var(--olive);
-
-  color:white;
-
-  font-size:18px;
-
-  box-shadow:
-    0 0 0 5px var(--white);
+  z-index:5;
 }
 
-/* corazón */
-.timeline-marker span{
+/* Imagen del círculo + corazón */
+.timeline-heart{
   display:block;
-  transform:translateY(-1px);
+
+  width:54px;
+  height:54px;
+
+  object-fit:contain;
 }
 
 /* Contenido */
 .timeline-content{
   width:100%;
-  max-width:145px;
-
-  text-align:center;
+  max-width:135px;
 
   display:flex;
   flex-direction:column;
+
   align-items:center;
   justify-content:center;
+
+  text-align:center;
 }
 
-/* Elementos impares a la izquierda */
+/* Elementos impares - izquierda */
 .timeline-item:nth-child(odd) .timeline-content{
   grid-column:1;
   grid-row:1;
 
-  justify-self:end;
+  justify-self:center;
 
-  padding-right:12px;
+  padding-right:8px;
 }
 
-/* Elementos pares a la derecha */
+/* Elementos pares - derecha */
 .timeline-item:nth-child(even) .timeline-content{
   grid-column:3;
   grid-row:1;
 
-  justify-self:start;
+  justify-self:center;
 
-  padding-left:12px;
+  padding-left:8px;
 }
 
-/* Imagen del ícono */
+/* Imagen de cada actividad */
 .timeline-icon{
+  display:block;
+
   width:72px;
   height:72px;
 
-  margin:0 auto 13px;
+  margin:0 auto 12px;
 
   object-fit:contain;
 }
 
-/* Nombre actividad */
+/* Nombre */
 .event-name{
+  margin:0 0 7px;
+
   font-family:"Playfair Display", Georgia, serif;
 
-  font-size:1.14rem;
+  font-size:1.08rem;
   font-weight:500;
 
   line-height:1.25;
 
   color:#5e5a50;
-
-  margin-bottom:8px;
 }
 
 /* Hora */
 .time{
   font-family:"Cinzel", serif;
 
-  font-size:.76rem;
+  font-size:.70rem;
   font-weight:500;
 
-  letter-spacing:.08em;
+  letter-spacing:.07em;
 
   color:var(--olive);
 }
 
-/* Celular */
-@media (max-width:390px){
+/* CELULAR */
+@media (max-width:480px){
 
   .timeline{
     width:100%;
+    max-width:340px;
+
+    margin-left:auto;
+    margin-right:auto;
   }
 
   .timeline-item{
-    grid-template-columns:1fr 42px 1fr;
-    min-height:165px;
+    grid-template-columns:
+      minmax(0,1fr)
+      48px
+      minmax(0,1fr);
+
+    min-height:175px;
   }
 
   .timeline-marker{
-    width:38px;
-    height:38px;
+    width:48px;
+    height:48px;
+  }
 
-    font-size:16px;
+  .timeline-heart{
+    width:48px;
+    height:48px;
   }
 
   .timeline-content{
@@ -1399,25 +1422,19 @@
   }
 
   .timeline-icon{
-    width:62px;
-    height:62px;
+    width:66px;
+    height:66px;
   }
 
   .event-name{
-    font-size:1.03rem;
+    font-size:1rem;
   }
 
   .time{
-    font-size:.67rem;
+    font-size:.65rem;
   }
 
 }
-    
-    /* =========================================================
-
-       CIERRE
-
-       ========================================================= */
 
     .thanks{
 
@@ -1558,10 +1575,6 @@
       .date-number{font-size:4.15rem}
 
       .count strong{font-size:1.48rem}
-
-      .timeline::before{left:68px}
-
-      .timeline-item{grid-template-columns:57px 23px 1fr;gap:0 10px}
 
     }
     @media (max-width:480px){
@@ -2294,10 +2307,13 @@ groomParents.innerHTML = CONFIG.groomParents
       </div>
 
     </div>
-
-    <div class="timeline-marker">
-      <span>♥</span>
-    </div>
+<div class="timeline-marker">
+  <img
+    src="assets/corazon-itinerario.png"
+    alt=""
+    class="timeline-heart"
+  >
+</div>
 
   `;
 
