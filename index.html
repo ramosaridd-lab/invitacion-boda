@@ -1228,7 +1228,67 @@
       color:var(--ink-soft);
 
     }
+/* =========================================================
+   LISTA DE REGALOS
+   ========================================================= */
 
+.gift-section{
+  text-align:center;
+}
+
+.gift-icon{
+  width:46px;
+  height:46px;
+  margin:0 auto 15px;
+}
+
+.gift-icon svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:var(--olive);
+  stroke-width:1.25;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.gift-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:28px;
+  min-width:210px;
+  padding:14px 28px;
+
+  border:1px solid var(--olive);
+  border-radius:30px;
+
+  background:var(--olive);
+  color:#fff;
+
+  font-family:"Cinzel", serif;
+  font-size:.72rem;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+
+  box-shadow:0 8px 20px rgba(79,88,55,.12);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.gift-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 11px 24px rgba(79,88,55,.16);
+}
+
+.gift-button:active{
+  transform:translateY(0);
+}
     /* =========================================================
 
        DRESS CODE
@@ -1874,7 +1934,10 @@
       confirmationMessage: "Tu presencia hará que este día sea aún más especial. Esperamos poder celebrar contigo.",
 
       thanksMessage: "Gracias por formar parte de nuestra historia y por acompañarnos en el comienzo de esta nueva etapa.",
+      
+      giftMessage: "Hemos preparado una lista de regalos para quienes deseen acompañarnos también en el inicio de nuestro nuevo hogar.",
 
+      giftListUrl: "https://www.wishbob.com/bkgeicnuxz",
       /* Itinerario: modifica horas y actividades */
 
       itinerary: [
@@ -1890,7 +1953,7 @@
         { time: "22:00", name: "Baile", icon: "assets/itinerario-baile.png" }
 
       ]
-
+        
     };
 
   </script>
@@ -2265,6 +2328,51 @@
       <div class="timeline" id="timeline"></div>
 
     </section>
+    <!-- 9. LISTA DE REGALOS -->
+
+<section class="section reveal gift-section">
+
+  <img
+    class="floral-img top-right"
+    src="assets/flores-esquina-2.png"
+    alt=""
+    onerror="this.style.display='none'"
+  >
+
+  <img
+    class="floral-img bottom-left"
+    src="assets/flores-esquina-1.png"
+    alt=""
+    onerror="this.style.display='none'"
+  >
+
+  <div class="gift-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="9" width="16" height="11" rx="1"></rect>
+      <path d="M3 6h18v4H3z"></path>
+      <path d="M12 6v14"></path>
+      <path d="M12 6H8.7C7.2 6 6 5 6 3.8 6 2.8 6.8 2 7.8 2 9.6 2 11 4 12 6Z"></path>
+      <path d="M12 6h3.3C16.8 6 18 5 18 3.8 18 2.8 17.2 2 16.2 2 14.4 2 13 4 12 6Z"></path>
+    </svg>
+  </div>
+
+  <p class="kicker">Un detalle para nuestro hogar</p>
+
+  <h2 class="script section-title">Lista de regalos</h2>
+
+  <p class="copy" id="giftMessage"></p>
+
+  <a
+    id="giftListButton"
+    class="gift-button"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Ver lista de regalos
+  </a>
+
+</section>
 
     <!-- 9. CONFIRMACIÓN -->
 
@@ -2405,6 +2513,9 @@ groomParents.innerHTML = CONFIG.groomParents
       $("#dressMessage").textContent = CONFIG.dressMessage;
 
       $("#itineraryMessage").textContent = CONFIG.itineraryMessage;
+      /* Lista de regalos */
+$("#giftMessage").textContent = CONFIG.giftMessage;
+$("#giftListButton").href = CONFIG.giftListUrl;
 
       $("#confirmationMessage").textContent = CONFIG.confirmationMessage;
 
